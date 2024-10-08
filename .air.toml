@@ -1,0 +1,17 @@
+# Config file for Air
+
+[build]
+  cmd = "go build -o tmp/main cmd/main.go"  # This will build your main.go from cmd
+  bin = "tmp/main"  # The location of the compiled binary
+  full_bin = "tmp/main"  # Run the binary directly
+  delay = 1000  # Delay before rebuild in milliseconds
+  kill_signal = "SIGINT"
+
+[log]
+  level = "debug"
+
+[watch]
+  dirs = ["."]
+  extensions = [".go"]
+  exclude_dir = ["tmp", "node_modules"]
+  # Watch for changes in these directories, but exclude tmp and node_modules
